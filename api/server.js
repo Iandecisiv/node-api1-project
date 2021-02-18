@@ -1,9 +1,11 @@
 const express = require('express')
 const db = require("./users/model")
+const cors = require('cors')
 
 const server = express()
 
 server.use(express.json())
+server.use(cors())
 
 server.get("/", (req, res) => {
     res.json({ message: "Hello, Worrld" })
